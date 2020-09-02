@@ -70,7 +70,7 @@ Complete the survey form with following values.
 |ANSWER VARIABLE NAME|apache_test_message
 |ANSWER TYPE|Text
 |MINIMUM/MAXIMUM LENGTH| Use the defaults
-|DEFAULT ANSWER| Be creative, keep it clean, we're all professionals here
+|DEFAULT ANSWER| This is my new website! Change what this says, please.
 |===
 
 

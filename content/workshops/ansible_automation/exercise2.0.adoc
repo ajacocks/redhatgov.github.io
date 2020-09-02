@@ -20,11 +20,11 @@ In this exercise, we are going to get Ansible Tower installed on your control no
 
 === Step 1: Change directories
 
-Change directories to /tmp
+Change directories to *~/src/tmp*
 
 [source,bash]
 ----
-cd /tmp
+cd ~/src/tmp
 ----
 
 === Step 2: Download Red Hat Ansible Tower
@@ -40,7 +40,7 @@ curl -O https://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-lat
 
 [source,bash]
 ----
-tar xvfz /tmp/ansible-tower-setup-latest.tar.gz
+tar xvfz ansible-tower-setup-latest.tar.gz
 ----
 
 === Step 4: Change directories
@@ -49,7 +49,7 @@ Change directories into the Ansible Tower setup package
 
 [source,bash]
 ----
-cd /tmp/ansible-tower-setup-*/
+cd ~/src/tmp/ansible-tower-setup-*/
 ----
 
 === Step 5: Open inventory file

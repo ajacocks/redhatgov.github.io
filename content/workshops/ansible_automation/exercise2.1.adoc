@@ -34,7 +34,7 @@ However, we are only going to focus on the key concepts required for this worksh
 
 === Step 1: Log in
 
-To log in, use the username `admin` and and the password `ansibleWS`.
+To log in, use the username *admin* and and the password *ansibleWS*.
 
 
 
@@ -60,7 +60,7 @@ Back in the Ansible Tower UI, choose BROWSE image:at_browse.png[LicB,45,25] and 
 
 === Step 4: Accept license agreement
 
-Select "_I agree to the End User License Agreement_".
+Select *"I agree to the End User License Agreement"*.
 
 === Step 5: Submit
 
@@ -123,7 +123,7 @@ Select ADD   image:at_add.png[Add,35,25]
 
 === Step 3: Complete the Ansible Tower Credentials form
 
-Complete the form, using the following entries and your private Ansible Tower SSH key.  When you paste the key in the `PRIVATE KEY` field, make sure to include the `-----BEGIN RSA PRIVATE KEY-----` and `-----BEGIN RSA PRIVATE KEY-----` lines.
+Complete the form, using the following entries and your private Ansible Tower SSH key.  When you paste the key in the *PRIVATE KEY* field, make sure to include the *-----BEGIN RSA PRIVATE KEY-----* and *-----BEGIN RSA PRIVATE KEY-----* lines.
 
 ----
 cat ~/.ssh/{{< span2 "prefix" "example" "-tower" >}} && echo
@@ -154,9 +154,7 @@ Select SAVE  image:at_save.png[Save,35,25] +
 == Section 3: Creating a Project
 
 A Project is a logical collection of Ansible playbooks, represented in Ansible Tower.
-You can manage playbooks and playbook directories, by either placing them manually
-under the Project Base Path on your Ansible Tower server, or by placing your playbooks into
-a source code management (SCM) system supported by Ansible Tower, including Git, Subversion, and Mercurial.
+You can manage playbooks and playbook directories, by either placing them manually under the Project Base Path on your Ansible Tower server, or by placing your playbooks into a source code management (SCM) system supported by Ansible Tower, including Git, Subversion, and Mercurial.
 
 === Step 1: Open a new project
 
@@ -205,7 +203,7 @@ Inventories are divided into groups and these groups contain the actual hosts.
 
 Groups may be sourced *manually*, by entering host names into Ansible Tower, or from one of Ansible Tower’s supported cloud providers.
 
-An Inventory can also be *imported* into Ansible Tower using the `tower-manage` command. This is how we are going to add an inventory for this workshop.
+An Inventory can also be *imported* into Ansible Tower using the *tower-manage* command. This is how we are going to add an inventory for this workshop.
 
 
 === Step 1: Navigate to Inventories main link
@@ -250,9 +248,9 @@ Switch back to your terminal session.  If by any chance you closed the Red Hat W
 
 === Step 6: Import an existing inventory
 
-Use the `tower-manage` command to import an existing inventory.  (_Be sure to replace <username> with your actual username._)
+Use the *tower-manage* command to import an existing inventory.  (_Be sure to replace <username> with your actual username._)
 ----
-sudo tower-manage inventory_import --source=/home/ec2-user/hosts --inventory-name="Ansible Workshop Inventory"
+sudo tower-manage inventory_import --source=/home/ec2-user/src/hosts --inventory-name="Ansible Workshop Inventory"
 ----
 
 You should see output similar to the following:

@@ -88,7 +88,7 @@ Make a backup copy of *site.yml*, and then create a new *site.yml*.
 
 [source,bash]
 ----
-cd ~/apache-basic-playbook
+cd ~/src/apache-basic-playbook
 mv site.yml site.yml.bkup
 vim site.yml
 ----
@@ -218,7 +218,7 @@ Add the following contents to the file:
 
 === Step 7: Download templates
 
-Download a couple of templates into `roles/apache-simple/templates/`.  And then, let's clean up the templates from exercise 2.1, by removing the old templates directory.
+Download a couple of templates into *roles/apache-simple/templates/*.  And then, let's clean up the templates from exercise 2.1, by removing the old templates directory.
 
 [source,bash]
 ----
@@ -238,7 +238,7 @@ let's run it and see how it works.
 
 [source,bash]
 ----
-cd ~/apache-basic-playbook
+cd ~/src/apache-basic-playbook
 ansible-playbook site.yml
 ----
 === Step 2: Verify your output
@@ -248,6 +248,6 @@ image::stdout_3.png[ansible-basic-playbook role-based stdout]
 
 == Section 4: Review
 
-You should now have a completed playbook, `site.yml` - with a single role called `apache-simple`.  The advantage of structuring your playbook into roles is that you can now add new roles to the playbook using Ansible Galaxy or simply writing your own.  In addition, roles simplify changes to variables, tasks, templates, etc.
+You should now have a completed playbook, *site.yml* , with a single role called *apache-simple*.  The advantage of structuring your playbook into roles is that you can now add new roles to the playbook using Ansible Galaxy or simply writing your own.  In addition, roles simplify changes to variables, tasks, templates, etc.
 
 {{< importPartial "footer/footer.html" >}}
