@@ -18,7 +18,7 @@ layout: lab
 == Exercise Description
 While it is possible to write a playbook in one file, as we've done throughout this workshop, eventually you’ll want to reuse files and start to organize things.
 
-The "role" feature in Ansible is the way we do this.  When you create a role, you deconstruct your playbook into parts and those parts sit in a directory structure.  _"Wha??  You mean that seemingly useless link:{dir_url}[best practice] you mentioned in exercise 1.2?"_   Yep, that one.
+The *role* feature in Ansible is the way we do this.  When you create a role, you deconstruct your playbook into parts and those parts sit in a directory structure.  _"Wha??  You mean that seemingly useless link:{dir_url}[best practice] you mentioned in exercise 1.2?"_   Yep, that one.
 
 For this exercise, you are going to take the playbook you just wrote and refactor it into a role.  In addition, you'll learn to use Ansible Galaxy.
 
@@ -35,17 +35,17 @@ Ansible Galaxy is a free site for finding, downloading, and sharing roles.  It's
 
 === Step 1:Navigate to your project
 
-Navigate to your `apache-basic-playbook` project.
+Navigate to your *apache-basic-playbook* project.
 
 [source,bash]
 ----
-cd ~/apache-basic-playbook
+cd ~/src/apache-basic-playbook
 ----
 
 
 === Step 2: Create a directory
 
-Create a directory called `roles` and `cd` into it.
+Create a directory called *roles* and *cd* into it.
 
 [source,bash]
 ----
@@ -56,19 +56,19 @@ cd roles
 
 === Step 3: Initialize new role
 
-Use the `ansible-galaxy` command to initialize a new role called `apache-simple`.
+Use the *ansible-galaxy* command to initialize a new role called *apache-simple*.
 
 [source,bash]
 ----
 ansible-galaxy init apache-simple
 ----
 
-Take a look around the structure you just created.  It should look a lot like Figure 1 above.  However, we need to complete one more step before moving onto Section 2.  It is Ansible best practice to clean out role directories and files you won't be using.  For this role, we won't be using anything from `files`, `tests`.
+Take a look around the structure you just created.  It should look a lot like Figure 1 above.  However, we need to complete one more step before moving onto Section 2.  It is Ansible best practice to clean out role directories and files you won't be using.  For this role, we won't be using anything from *files*, *tests*.
 
 
 === Step 4: Remove directories
 
-Remove the `files` and `tests` directories
+Remove the *files* and *tests* directories
 
 [source,bash]
 ----
@@ -77,14 +77,14 @@ rm -rf files tests
 ----
 
 
-== Section 2: Breaking your `site.yml` playbook into the newly created `apache-simple` role
+== Section 2: Breaking your *site.yml* playbook into the newly created *apache-simple* role
 
 
-In this section, we will separate the major parts of your playbook, including `vars:`, `tasks:`, `template:`, and `handlers:`.
+In this section, we will separate the major parts of your playbook, including *vars:*, *tasks:*, *template:*, and *handlers:*.
 
 === Step 1: Backup
 
-Make a backup copy of `site.yml`, then create a new `site.yml`.
+Make a backup copy of *site.yml*, and then create a new *site.yml*.
 
 [source,bash]
 ----
@@ -148,17 +148,16 @@ Hey, wait just a minute...did you just have us put variables in two separate pla
 - vars directory
 - defaults directory
 - group_vars directory
-- In the playbook under the `vars:` section
-- In any file which can be specified on the command line using the `--extra_vars` option
-- On a boat, in a moat, with a goat  _(disclaimer:  this is a complete lie)_
+- In the playbook under the *vars:* section
+- In any file which can be specified on the command line using the *--extra_vars* option
 
-Bottom line, you need to read up on link:{var_prec_url}[variable precedence] to understand both where to define variables and which locations take precedence.  In this exercise, we are using role defaults to define a couple of variables and these are the most malleable.  After that, we defined some variables in `/vars`
+Bottom line, you need to read up on link:{var_prec_url}[variable precedence] to understand both where to define variables and which locations take precedence.  In this exercise, we are using role defaults to define a couple of variables and these are the most malleable.  After that, we defined some variables in */vars*
 which have a higher precedence than defaults and can't be overridden as a default variable.
 ====
 
 === Step 5: Create role handler
 
-Create your role handler in `roles/apache-simple/handlers/main.yml`.
+Create your role handler in *roles/apache-simple/handlers/main.yml*.
 
 [source,bash]
 ----

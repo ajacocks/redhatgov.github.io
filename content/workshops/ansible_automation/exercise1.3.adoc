@@ -46,7 +46,7 @@ link:{handler_url}[Ansible Handlers]
 To begin, we are going to create a new playbook, but it should look very familiar to the one you created in Exercise 1.2
 
 
-We are now going to run your brand-new playbook, on your two web nodes.  To do this, you are going to use the `ansible-playbook` command.
+We are now going to run your brand-new playbook, on your two web nodes.  To do this, you are going to use the *ansible-playbook* command.
 
 === Step 1: Create a new project and playbook
 
@@ -54,7 +54,7 @@ Navigate to your home directory create a new project and playbook.
 
 [source,bash]
 ----
-cd
+cd ~/src
 mkdir apache-basic-playbook
 cd apache-basic-playbook
 vim site.yml
@@ -99,25 +99,24 @@ Add a new task called *install httpd packages*.
 ====
 Explanation of the *install httpd packages* task actions. +
 
-- `vars:` You've told Ansible the next thing it sees will be a variable name +
-- `httpd_packages` You are defining a list-type variable called httpd_packages.  What follows
+- *vars:* You've told Ansible the next thing it sees will be a variable name +
+- *httpd_packages* You are defining a list-type variable called httpd_packages.  What follows
 is a list of those packages +
-- `{{ item }}` You are telling Ansible that this will expand into a list item like `httpd` and `python3-mod_wsgi`. +
-- `with_items: "{{ httpd_packages }}` This is your loop, which is instructing Ansible to perform this task on
-every `item` in `httpd_packages`
-- `notify: restart apache service` This statement is a `handler`, so we'll come back to it in Section 3.
+- *{{ item }}:* You are telling Ansible that this will expand into a list item like *httpd* and *python3-mod_wsgi*. 
+- *with_items:* *"{{ httpd_packages }}"* This is your loop, which is instructing Ansible to perform this task on every *item* in *httpd_packages*
+- *notify: restart apache service* This statement is a *handler*, so we'll come back to it in Section 3.
 ====
 
 
 == Section 2: Deploying files and starting a service
 
-When you need to do pretty much anything with files and directories, use one of the link:{file_url}[Ansible Files] modules.  In this case, we'll leverage the `file` and `template` modules.
+When you need to do pretty much anything with files and directories, use one of the link:{file_url}[Ansible Files] modules.  In this case, we'll leverage the *file* and *template* modules.
 
 After that, you will define a task to start the apache service.
 
 
 === Step 1: Create a template directory
-Create a `templates` directory in your project directory and download two files.
+Create a *templates* directory in your project directory and download two files.
 
 [source,bash]
 ----
@@ -189,9 +188,8 @@ There are really two parts to this Section; adding a handler to the playbook and
 [NOTE]
 ====
 
-- `handler:` This is telling the *play* that the `tasks:` are over, and now we are defining `handlers:`.
-  Everything below that looks the same as any other task, i.e. you give it a name, a module, and the options for that
-  module.  This is the definition of a handler.
+- *handler:* This is telling the *play* that the *tasks:* are over, and now we are defining *handlers:*.
+  Everything below that looks the same as any other task, i.e. you give it a name, a module, and the options for that module.  This is the definition of a handler.
 
 ====
 === Step 2: Calling the handlers
@@ -200,9 +198,7 @@ There are really two parts to this Section; adding a handler to the playbook and
 ====
 You can't have a former if you don't mention the latter.
 
-- `notify: restart apache service` ...and here is your latter. Finally!  The `notify` statement is the invocation of a handler by
-name.  Quite the reveal, we know.   You already noticed that you've added a `notify` statement to the `copy httpd.conf`
-task, now you know why.
+- *notify: restart apache service* ...and here is your latter. Finally!  The *notify* statement is the invocation of a handler by name.  Quite the reveal, we know.   You already noticed that you've added a *notify* statement to the *copy httpd.conf* task, now you know why.
 ====
 
 == Section 4: Review

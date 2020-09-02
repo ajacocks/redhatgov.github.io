@@ -70,7 +70,7 @@ Connect to the web based editor in a browser window, using the following URL:
 
 First, in order to manage remote systems - we need to set up our dependencies:
 
-Define your inventory.  Inventories are crucial to Ansible, as they define remote machines on which you will run commands or your playbook(s).  Use `vi` or `vim` to create a file called `hosts`.  Then, add the appropriate definitions for the node that will function as a web node.
+Define your inventory.  Inventories are crucial to Ansible, as they define remote machines on which you will run commands or your playbook(s).  Use *vi* or *vim* to create a file called *hosts*, in your *~/src* directory.  Then, add the appropriate definitions for the node that will function as a web node.
 
 ====
 [NOTE]
@@ -83,7 +83,7 @@ For example, a recent workshop student used:
 .hosts (example)
 [source,bash]
 ----
-vim hosts
+vim ~/src/hosts
 ----
 
 Put the following content into the file:
@@ -95,7 +95,7 @@ Put the following content into the file:
 
 === Step 1: Test webhost response
 
-Let's start with something basic - pinging a host.  The `ping` module tests the responsiveness of our web host.
+Let's start with something basic - pinging a host.  The *ping* module tests the responsiveness of our web host.
 
 [source,bash]
 ----
@@ -152,14 +152,14 @@ ansible web -m dnf -a "name=nodejs state=present" -b
 
 [source,bash]
 ----
-ansible web -m copy -a "src=hello.js dest=hello.js"
+ansible web -m copy -a "src=~/src/hello.js dest=hello.js"
 ----
 
 === Step 6: Copy configuration file to priviledged location
 
 [source,bash]
 ----
-ansible web -m copy -a "src=hello.service dest=/etc/systemd/system/hello.service" -b
+ansible web -m copy -a "src=~/src/hello.service dest=/etc/systemd/system/hello.service" -b
 ----
 
 === Step 6: Deploy an application

@@ -18,7 +18,7 @@ layout: lab
 == Section 1: Running the playbook
 
 
-We are now going to run your brand-new playbook, on your two web nodes.  To do this, you are going to use the `ansible-playbook` command.
+We are now going to run your brand-new playbook, on your two web nodes.  To do this, you are going to use the *ansible-playbook* command.
 
 === Step 1: Check your playbook
 
@@ -27,7 +27,7 @@ We are now going to run your brand-new playbook, on your two web nodes.  To do t
 However, before you run the playbook, lets take a few moments to understand the options.
 
 - *install_apache.yml* This is the name of the playbook that we are running.
-- *-v* Altough not used here, this increases verbosity.  Try running your playbook a second time using `-v` or `-vv` to increase the verbosity (debugging information).
+- *-v* Altough not used here, this increases verbosity.  Try running your playbook a second time using *-v* or *-vv* to increase the verbosity (debugging information).
 
 
 [NOTE]
@@ -41,7 +41,7 @@ ansible-playbook install_apache.yml --syntax-check
 ---
 Now, run your playbook:
 
-From your playbook directory ( `~/apache_basic` ), run your playbook.
+From your playbook directory ( *~/src/apache_basic* ), run your playbook.
 
 [source,bash]
 ----
@@ -53,7 +53,7 @@ In standard output, you should see something that looks very similar to the foll
 image::stdout_1.png[caption="Figure 1: ", title="apache_basic playbook stdout",328]
 
 Notice that the play and each task is named, so that you can understand the action being performed and the node it is being performed upon.
-You also may notice a task in there that you didn't write;  <cough> `setup` </cough>.  This is because the `setup` module
+You also may notice a task in there that you didn't write;  <cough> *setup* </cough>.  This is because the *setup* module
 runs by default.  To turn if off, you can specify link:{gather_facts_url}[gather_facts: false] in your play definition like this:
 
 
@@ -79,8 +79,8 @@ For this exercise we aren't going to show you line by line, but we will give you
 
 - If your first task in the playbook was to install httpd and the second task was to start the service, which order do you think
 those tasks should be in now?
-- If `started` makes sure a service is started, then what option ensures it is stopped?
-- If `present` makes sure a package is installed, then what option ensures it is removed?  Er... starts with an *ab*, ends with a *sent*
+- If *started* makes sure a service is started, then what option ensures it is stopped?
+- If *present* makes sure a package is installed, then what option ensures it is removed?  Er... starts with an *ab*, ends with a *sent*
 
 
 
